@@ -1,0 +1,650 @@
+@charset "utf-8";
+
+/* =====================
+   Base
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{text-decoration: none;}
+
+body {
+  font-family: "Pretendard", system-ui, sans-serif;
+  color: #1a1a1a;
+  background: #f7f8f6;
+}
+
+/* =====================
+   HEADER
+===================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+  background: #f7f8f6;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.site-header .logo {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.main-nav a {
+  margin-left: 32px;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #1F4D3A;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #2d7959;
+  font-weight: 800;
+  text-shadow: 0 0 4px rgba(45,121,89,0.5);
+}
+
+/* =====================
+   DOT NAV
+===================== */
+.dot-nav {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  list-style: none;
+}
+
+.dot-nav li {
+  width: 8px;
+  height: 8px;
+  background: #bbb;
+  border-radius: 50%;
+  margin: 14px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot-nav li.active {
+  background: #2d7959;
+  transform: scale(1.4);
+}
+
+/* =====================
+   SECTION BASIC
+===================== */
+.section {
+  min-height: 100vh;
+  padding-top: 64px;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero-symbol {
+  min-height: 100vh;
+  background: #f7f8f6;
+  overflow: hidden;
+}
+
+.hero-symbol .hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-symbol-area {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-symbol-area img {
+  width: 140%;
+  transform: translateX(-20%);
+}
+
+.hero-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.hero-text .role {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #555;
+}
+
+.hero-text .intro {
+  margin-top: 36px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* =====================
+   Section Title (Unified)
+===================== */
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 64px;
+  padding-top: 0;
+  line-height: 1.2;
+}
+
+
+
+
+/* =====================
+   ABOUT
+===================== */
+.about-pattern {
+  position: relative;
+  padding: 160px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.about-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/kang_logo_02.svg");
+  background-repeat: repeat;
+  background-size: 240px;
+  opacity: 0.04;
+}
+
+.about-flex {
+  max-width: 1000px;
+  margin:  auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* .about-text h2 {
+  font-size: 40px;
+  margin-bottom: 32px;
+} */
+
+.about-desc {
+  width: 1000px;
+  max-width: 90vw;        /* ✅ 모바일 안전장치 */
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.7;
+  margin-top: 32px;
+}
+
+.about-info {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 40px;
+}
+
+.about h3 {
+  font-size: 18px;
+  margin: 26px 0 16px;
+}
+
+.about li {
+  font-size: 15px;
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.about-photo {
+  width: 260px;
+  margin: 120px 0 0 auto;
+  display: flex;          /* ✅ 필수 */
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 14px;
+  filter: grayscale(100%);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+
+/* =====================
+  Work Section
+===================== */
+/* WORK SECTION */
+.work-section {
+  padding: 80px 0 80px;
+  background: #f7f8f6;
+}
+
+.work-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* 타이틀 */
+/* .work-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 64px;
+} */
+
+/* 카테고리 버튼 */
+.work-category {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 64px;
+}
+
+.category-btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #1F4D3A;
+  background: transparent;
+  color: #1F4D3A;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.category-btn.active {
+  background: #1F4D3A;
+  color: #fff;
+}
+
+/* 포트폴리오 */
+.portfolio-grid {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid.active {
+  display: grid;
+}
+
+
+/* 썸네일 카드 */
+.portfolio-item {
+  position: relative;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;            /* 핵심 */
+  cursor: pointer;
+  background: #eee;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* 이미지 꽉 차게 */
+  transition: transform 0.3s ease;
+}
+
+
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.06);
+}
+
+
+.portfolio-label {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(31, 77, 58, 0.85);
+  color: #fff;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+/* =====================
+   CONTACT (FINAL)
+===================== */
+.contact {
+  min-height: 100vh;
+  background: #1F4D3A;
+  display: flex;
+  flex-direction: column; /* ⭐ 핵심 */
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card {
+  position: relative;
+  width: 100%;
+  max-width: clamp(330px, 80vw, 900px);
+  padding: clamp(48px, 6vw, 120px)
+           clamp(20px, 6vw, 80px);
+  background: #fff;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-bg-symbol {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.contact-bg-symbol img {
+  width: 420px;
+  opacity: 0.04;
+}
+
+.contact-inner {
+  max-width: 520px;
+  text-align: center;
+  position: relative;
+}
+
+/* .contact h2 {
+  font-size: clamp(24px, 4vw, 40px);
+  margin-bottom: 16px;
+} */
+
+.contact-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.contact-info li {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contact-btn {
+  margin-top: 32px;
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  border: 3px solid #1F4D3A;
+  font-size: 14px;
+  color: #1F4D3A;
+}
+
+.contact-footer {
+  margin-top: 32px;
+  padding-bottom: 24px;
+
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+
+
+
+
+/* =====================
+   MOBILE (UNIFIED)
+===================== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .site-header {
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .site-header .logo {
+    display: none;
+  }
+
+  .main-nav a {
+    margin-left: 14px;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  /* HERO */
+  .hero-symbol .hero-inner {
+    flex-direction: column;
+  }
+
+  .hero-symbol-area {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .hero-symbol-area img {
+    width: 180%;
+    transform: translateX(-40%) translateY(-10%);
+    opacity: 0.12;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+    margin-top: 36px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-text .intro {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+
+  /* ABOUT */
+  .about-pattern {
+    padding: 120px 0;
+  }
+
+  .about-flex {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-photo {
+    width: 200px;
+     margin: 20px auto 0;
+  }
+
+  /* .about-text h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  } */
+
+    /* CONTACT */
+  .contact {
+    padding: 30px 12px;
+  }
+
+  .contact-card {
+    max-width: 330px;
+    padding: 52px 20px;
+    border-radius: 26px;
+    transition: padding 0.15s ease;
+  }
+
+  /* .contact h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  } */
+
+  .contact-intro {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .contact-info li {
+    font-size: 16px;
+    padding: 24px 0;
+  }
+
+  .contact-btn {
+    font-size: 13px;
+    padding: 12px 24px;
+  }
+
+  .contact-bg-symbol img {
+    width: 160px;
+    opacity: 0.03;
+  }
+
+  .hero-text h1,
+.contact h2 {
+  transition: font-size 0.15s ease;
+}
+
+.portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;          /* ← 여기서 조절 */
+  }
+
+  .work-title {
+    font-size: 28px;
+  }
+
+/* Work 전체 영역 좌우 여백 줄이기 */
+  .work-section {
+    padding: 40px 16px;
+  }
+
+  /* 카테고리 버튼 영역 */
+  .work-category {
+    margin-bottom: 24px;
+    gap: 10px;
+  }
+
+  /* 포트폴리오 그리드 */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px; /* ← 여기 중요 */
+  }
+
+  /* 카드 자체 */
+  .work-item {
+    padding: 0;
+    border-radius: 14px;
+    min-height: 120px;
+    
+  }
+  
+}
+
+
+
+/* modal css */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  max-width: 900px;
+  max-height: 85vh;        /* ⭐ 화면 기준 최대 높이 */
+  margin: 7vh auto;
+  padding: 40px;
+  border-radius: 20px;
+  overflow-y: auto;        /* ⭐ 모달 안에서만 스크롤 */
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;        /* ⭐ 이미지 최대 높이 제한 */
+  object-fit: contain;    /* 잘리지 않게 */
+  border-radius: 16px;
+  margin: 24px 0;
+  display: block;
+}
+
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
