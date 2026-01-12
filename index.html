@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eun Hye Kang | Portfolio</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<!-- =====================
+  HEADER
+===================== -->
+<header class="site-header">
+  <div class="logo"></div>
+  <nav class="main-nav">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#work">WORK</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<!-- =====================
+  DOT NAVIGATION
+===================== -->
+<ul class="dot-nav">
+  <li data-target="home" class="active"></li>
+  <li data-target="about"></li>
+  <li data-target="work"></li>
+  <li data-target="contact"></li>
+</ul>
+
+<!-- =====================
+  HOME (HERO)
+===================== -->
+<section id="home" class="section hero hero-symbol">
+  <div class="hero-inner">
+
+    <div class="hero-symbol-area">
+      <img src="./images/kang_logo_01.svg" alt="K Logo">
+    </div>
+
+    <div class="hero-text">
+      <h1>EUN HYE KANG</h1>
+      <p class="role">Web & App Designer</p>
+      <p class="intro">
+        Designing calm, structured<br>
+        digital experiences.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================
+  ABOUT
+===================== -->
+<section id="about" class="section about about-pattern">
+  <div class="about-inner about-flex">
+
+    <div class="about-text">
+      <h2 class="section-title">About Me</h2>
+
+
+      <p class="about-info">
+        강은혜<br>
+        1980.08.13<br><br>
+        경기도 김포시 운양동<br>
+        T. 010-3612-7095<br>
+        E. ehkang80@gmail.com
+      </p>
+
+      <div class="about">
+        <h3>주요 경력</h3>
+        <ul>
+          <li>건축 영상 CG 제작</li>
+          <li>철도 합사 총괄 설계 / 편집 지원</li>
+        </ul>
+      </div>
+
+      <div class="about">
+        <h3>보유 자격증</h3>
+        <ul>
+          <li>GTQ 1급 <span>(2025.12.19)</span></li>
+          <li>GTQi 2급 <span>(2025.08.18)</span></li>
+          <li>보육교사 2급 <span>(2022.09.20)</span></li>
+          <li>운전면허증 2종 보통</li>
+        </ul>
+      </div>
+
+      <div class="about">
+        <h3>사용 가능 프로그램</h3>
+        <ul>
+          <li>Figma, Adobe Photoshop, Illustrator</li>
+          <li>HTML5, CSS3, Javascript (ES6+)</li>
+          <li>ChatGPT (Code/Content), Claude</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-photo">
+      <img src="./images/kang.png" alt="Eunhye Kang">
+      <p class="about-desc">
+        웹과 앱 환경에서 사용자 경험을 중심으로<br>
+        절제되고 구조적인 디자인을 만들어가는 디자이너입니다.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+  WORK
+===================== -->
+<section id="work" class="section work-section">
+  <div class="work-inner">
+
+    <h2 class="section-title">WORK</h2>
+
+    <!-- 카테고리 버튼 -->
+    <div class="work-category">
+  <button class="category-btn active" data-category="graphics">GRAPHICS</button>
+  <button class="category-btn" data-category="uiux">UI / UX</button>
+  <button class="category-btn" data-category="coding">CODING</button>
+</div>
+
+
+    <!-- GRAPHICS -->
+    <div class="portfolio-grid active" data-category="graphics">
+
+  <div class="portfolio-item"
+     data-title="name card Design"
+     data-image="./images/graphics_0101.png">
+  <img src="./images/graphics_01.png" alt="graphics_01">
+  <span class="portfolio-label">Name Card Design</span>
+</div>
+
+<div class="portfolio-item"
+     data-title="name card Design"
+     data-image="./images/graphics_0101.png">
+  <img src="./images/graphics_02.png" alt="graphics_01">
+  <span class="portfolio-label">Name Card Design</span>
+</div>
+
+  <div class="portfolio-item"
+       data-title="Poster Design"
+       data-image="./images/graphics_02.jpg">
+    <img src="./images/graphics_02.jpg" alt="Graphics 2">
+    <span class="portfolio-label">Poster</span>
+  </div>
+
+  <div class="portfolio-item"
+       data-title="Editorial Layout"
+       data-image="./images/graphics_03.jpg">
+    <img src="./images/graphics_03.jpg" alt="Graphics 3">
+    <span class="portfolio-label">Editorial</span>
+  </div>
+
+  <!-- 나머지도 같은 패턴으로 -->
+</div>
+
+    <!-- UI/UX -->
+    <div class="portfolio-grid" data-category="uiux">
+      <div class="portfolio-item" data-title="UIUX 1">UIUX 1</div>
+      <div class="portfolio-item" data-title="UIUX 2">UIUX 2</div>
+      <div class="portfolio-item" data-title="UIUX 3">UIUX 3</div>
+      <div class="portfolio-item" data-title="UIUX 4">UIUX 4</div>
+      <div class="portfolio-item" data-title="UIUX 5">UIUX 5</div>
+      <div class="portfolio-item" data-title="UIUX 6">UIUX 6</div>
+      <div class="portfolio-item" data-title="UIUX 7">UIUX 7</div>
+      <div class="portfolio-item" data-title="UIUX 8">UIUX 8</div>
+    </div>
+
+    <!-- CODING -->
+    <div class="portfolio-grid" data-category="coding">
+      <div class="portfolio-item" data-title="Coding 1">CODING 1</div>
+      <div class="portfolio-item" data-title="Coding 2">CODING 2</div>
+      <div class="portfolio-item" data-title="Coding 3">CODING 3</div>
+      <div class="portfolio-item" data-title="Coding 4">CODING 4</div>
+      <div class="portfolio-item" data-title="Coding 5">CODING 5</div>
+      <div class="portfolio-item" data-title="Coding 6">CODING 6</div>
+      <div class="portfolio-item" data-title="Coding 7">CODING 7</div>
+      <div class="portfolio-item" data-title="Coding 8">CODING 8</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- =====================
+     MODAL (Portfolio Popup)
+===================== -->
+<div class="modal" aria-hidden="true">
+  <div class="modal-overlay"></div>
+
+  <div class="modal-content" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close">&times;</button>
+
+    <h3 id="modal-title">Portfolio</h3>
+
+    <!-- ⭐ 추가되는 부분 -->
+    <img id="modal-image" src="" alt="">
+
+    <p class="modal-desc">
+      여기에 포트폴리오 상세 내용이 들어갑니다.
+    </p>
+  </div>
+</div>
+
+
+
+
+
+<!-- =====================
+  contact
+===================== -->
+<section id="contact" class="section contact contact-dark">
+
+  <div class="contact-card">
+
+    <div class="contact-bg-symbol">
+      <img src="./images/kang_logo_01.svg" alt="">
+    </div>
+
+    <div class="contact-inner">
+
+      <h2 class="section-title">Contact Me</h2>
+
+      <p class="contact-intro">
+        함께 고민하며 완성하는 디자인에 기여하고 싶습니다.
+      </p>
+
+      <ul class="contact-info">
+        <li>
+          <span class="label">Name</span>
+          <span class="value">강은혜</span>
+        </li>
+        <li>
+          <span class="label">Phone</span>
+          <span class="value">010-3612-7095</span>
+        </li>
+        <li>
+          <span class="label">Email</span>
+          <span class="value">ehkang80@gmail.com</span>
+        </li>
+      </ul>
+
+      <a href="mailto:ehkang80@gmail.com" class="contact-btn">
+        이메일 보내기
+      </a>
+    </div>
+  </div>
+
+  <p class="contact-footer">
+    KANG EUNHYE © All Rights Reserved
+  </p>
+
+</section>
+
+
+
+
+<!-- ✅ JS 연결 (맨 아래, 딱 1줄) -->
+<script src="./js/javascript.js"></script>
+
+</body>
+</html>
