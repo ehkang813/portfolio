@@ -478,7 +478,7 @@ li{list-style: none;}
 
 
 /* =====================
-   MOBILE (UNIFIED)
+   MOBILE (max-width: 768px)
 ===================== */
 @media (max-width: 768px) {
 
@@ -530,30 +530,10 @@ li{list-style: none;}
     margin-top: 24px;
   }
 
-
   .section-title {
     font-size: 28px;
     margin-bottom: 40px;
   }
-  
-
-
-
-/* =========================
-   ABOUT DESKTOP (>= 1024px)
-========================= */
-@media (min-width: 1024px) {
-  .about-visual {
-    position: relative;
-    top: 250px;
-  }
-}
-
-
-/* =========================
-   ABOUT MOBILE (<= 768px)
-========================= */
-@media (max-width: 768px) {
 
   /* ABOUT */
   .about-pattern {
@@ -601,12 +581,48 @@ li{list-style: none;}
     line-height: 1.4;
     text-align: center;
   }
+
+  /* WORK */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .portfolio-item {
+    width: 100%;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  .portfolio-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    text-align: center;
+  }
 }
 
 
-/* =========================
-   ABOUT iPhone 13 mini (<= 430px)
-========================= */
+/* =====================
+   DESKTOP ONLY (>= 1024px)
+===================== */
+@media (min-width: 1024px) {
+  .about-visual {
+    position: relative;
+    margin-top: 250px;
+  }
+}
+
+
+/* =====================
+   SMALL MOBILE (<= 430px)
+===================== */
 @media (max-width: 430px) {
 
   /* HEADER */
@@ -641,40 +657,9 @@ li{list-style: none;}
 }
 
 
-/* =========================
-   WORK – MOBILE FIX
-========================= */
-@media (max-width: 768px) {
-
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 🔥 핵심 */
-    gap: 16px;
-  }
-
-  .portfolio-item {
-    width: 100%;
-  }
-
-  .portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 16px;
-  }
-
-  .portfolio-label {
-    display: block;
-    margin-top: 8px;
-    font-size: 13px;
-    text-align: center;
-  }
-}
-
-
-
-
-/* modal css */
+/* =====================
+   MODAL
+===================== */
 .modal {
   position: fixed;
   inset: 0;
@@ -696,11 +681,11 @@ li{list-style: none;}
   position: relative;
   background: #fff;
   max-width: 900px;
-  max-height: 85vh;        /* ⭐ 화면 기준 최대 높이 */
+  max-height: 85vh;
   margin: 7vh auto;
   padding: 40px;
   border-radius: 20px;
-  overflow-y: auto;        /* ⭐ 모달 안에서만 스크롤 */
+  overflow-y: auto;
 }
 
 .modal-close {
@@ -716,13 +701,12 @@ li{list-style: none;}
 #modal-image {
   width: 100%;
   height: auto;
-  max-height: 60vh;        /* ⭐ 이미지 최대 높이 제한 */
-  object-fit: contain;    /* 잘리지 않게 */
+  max-height: 60vh;
+  object-fit: contain;
   border-radius: 16px;
   margin: 24px 0;
   display: block;
 }
-
 
 .modal-desc {
   font-size: 14px;
