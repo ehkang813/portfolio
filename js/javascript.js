@@ -105,28 +105,32 @@ function closeModal() {
 
 
 
-  // 구글 앱스 스크립트 배포 후 받은 URL을 여기에 넣으세요
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwFxWtmxWHsjuN6GYwUvLFHqhkTJVl0G_KoAks7BPxNYfGFhAA_alxvOGrnDNjV_gm4wg/exec';
+// javascript.js 맨 아래에 추가
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzj7FiC9rCYVmGiZ9FNo0bcYX8Rt_iESjHr4rU5FNajMIEr1ZiGCVGZhVLtKR2rMc20/exec';
+const form = document.getElementById('g-form');
 
-  fetch(scriptURL, {
-    method: 'POST',
-    mode: 'no-cors', // 보안(CORS) 문제 해결을 위한 설정
-    cache: 'no-cache',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
+form.addEventListener('submit', e => {
+  e.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
+  
+  // 전송 중 버튼 비활성화 (마케팅 UI 에티켓!)
+  const submitBtn = form.querySelector('.btn-submit');
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Sending...";
+
+  fetch(scriptURL, { 
+    method: 'POST', 
+    body: new FormData(form)
   })
-  .then(() => {
-    // no-cors 모드에서는 상세 응답을 읽기 어려우므로 전송 시도가 성공하면 알림을 띄웁니다.
-    alert('메시지가 성공적으로 전송되었습니다! 강은혜 디자이너가 곧 연락드릴게요.');
-    form.reset();
-  })
-  .catch(err => {
-    alert('전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
-    console.error('Error!', err.message);
-  })
-  .finally(() => {
+  .then(response => {
+    alert('메세지가 성공적으로 접수되었습니다!');
     submitBtn.disabled = false;
-    submitBtn.innerText = 'Submit';
+    submitBtn.innerText = "Submit";
+    form.reset(); // 폼 초기화
+  })
+  .catch(error => {
+    console.error('Error!', error.message);
+    alert('오류가 발생했습니다. 다시 시도해주세요.');
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Submit";
   });
+});
