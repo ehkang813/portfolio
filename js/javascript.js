@@ -105,31 +105,32 @@ function closeModal() {
 
 
 
-// javascript.js 맨 아래에 추가
+// javascript.js 맨 아래에 이 코드를 복사해서 붙여넣으세요.
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzj7FiC9rCYVmGiZ9FNo0bcYX8Rt_iESjHr4rU5FNajMIEr1ZiGCVGZhVLtKR2rMc20/exec';
 const form = document.getElementById('g-form');
 
 form.addEventListener('submit', e => {
   e.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
   
-  // 전송 중 버튼 비활성화 (마케팅 UI 에티켓!)
+  // 마케팅 UI 에티켓: 전송 중 버튼 비활성화
   const submitBtn = form.querySelector('.btn-submit');
   submitBtn.disabled = true;
   submitBtn.innerText = "Sending...";
 
+  // FormData를 사용하여 폼의 모든 데이터를 자동으로 수집합니다.
   fetch(scriptURL, { 
     method: 'POST', 
-    body: new FormData(form)
+    body: new FormData(form) // 폼에 입력된 name="name", name="email" 등을 자동으로 묶어줍니다.
   })
   .then(response => {
-    alert('메세지가 성공적으로 접수되었습니다!');
+    alert('메시지가 성공적으로 전송되었습니다! 강은혜 디자이너가 곧 연락드릴게요.');
     submitBtn.disabled = false;
     submitBtn.innerText = "Submit";
     form.reset(); // 폼 초기화
   })
   .catch(error => {
     console.error('Error!', error.message);
-    alert('오류가 발생했습니다. 다시 시도해주세요.');
+    alert('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
     submitBtn.disabled = false;
     submitBtn.innerText = "Submit";
   });
