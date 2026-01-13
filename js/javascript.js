@@ -72,27 +72,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  
   /* ===== 모달 ===== */
-  const modal = document.querySelector('.modal');
-  const modalOverlay = document.querySelector('.modal-overlay');
-  const modalClose = document.querySelector('.modal-close');
-  const modalTitle = document.getElementById('modal-title');
-  const modalImage = document.getElementById('modal-image');
+const modal = document.querySelector('.modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalClose = document.querySelector('.modal-close');
+const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
+const modalDesc = document.querySelector('.modal-desc');
 
+document.querySelectorAll('.portfolio-item').forEach(item => {
+  item.addEventListener('click', () => {
+    modalTitle.textContent = item.dataset.title || 'Portfolio';
+    modalImage.src = item.dataset.image || '';
+    modalDesc.innerHTML = item.dataset.desc || ''; // ✅ 이것만
 
-  document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', () => {
-      modalTitle.textContent = item.dataset.title || 'Portfolio';
-      modalImage.src = item.dataset.image;   // ⭐ 추가
-      modal.classList.add('open');
-    });
+    modal.classList.add('open');
+    document.body.classList.add('modal-open'); // ✅ 추가
   });
+});
 
-  modalOverlay.addEventListener('click', closeModal);
-  modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+modalClose.addEventListener('click', closeModal);
 
-  function closeModal() {
-    modal.classList.remove('open');
-  }
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.classList.remove('modal-open'); // ✅ 추가
+}
+
 
 });
+
+
+
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbwFxWtmxWHsjuN6GYwUvLFHqhkTJVl0G_KoAks7BPxNYfGFhAA_alxvOGrnDNjV_gm4wg/exec', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(result => {
+    alert('메시지가 성공적으로 전송되었습니다!');
+    form.reset();
+  })
+  .catch(err => {
+    alert('전송 중 오류가 발생했습니다.');
+    console.error(err);
+  });
+});
+
