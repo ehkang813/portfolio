@@ -418,12 +418,15 @@
     </div>
 
     <!-- RIGHT -->
-    <form class="contact-form" id="contactForm">
+  <form class="contact-form" id="contactForm">
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="text" name="phone" placeholder="Your Phone Number" required>
   <input type="email" name="email" placeholder="Your Email" required>
   <textarea name="message" placeholder="Your Message" rows="10" required></textarea>
-  <button type="submit" class="btn-submit">Submit</button>
+  
+  <button type="submit" class="btn-submit" id="submitBtn">Submit</button>
+  
+  <p id="formStatus" style="display:none; margin-top:10px; font-size:14px;"></p>
 </form>
 
 
