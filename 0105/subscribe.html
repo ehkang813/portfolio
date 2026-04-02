@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>구독하기</title>
+
+  <!-- Font -->
+  <!-- Noto Sans KR -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/subscribe.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="app-header">
+  <div class="left-group">
+    <button class="back-btn" id="backBtn">
+      <img src="./images/back.png" alt="뒤로가기">
+    </button>
+    <h1 class="header-title">구독하기</h1>
+  </div>
+
+  <div class="profile">
+  <a href="account.html">
+    <img class="profile-img" src="./images/profile.png" alt="유저">
+  </a>
+</div>
+
+</header>
+
+<main class="home-main">
+
+  <!-- 개월수별 구독 혜택 -->
+  <section class="sub-section">
+    <h2>개월수별 구독 혜택</h2>
+
+    <div class="plan-wrap">
+      <article class="plan-card">
+        <h3>3개월</h3>
+        <span class="badge">5% OFF</span>
+        <p>무료 배송 1회 제공</p>
+      </article>
+
+      <article class="plan-card">
+        <h3>6개월</h3>
+        <span class="badge">12% OFF</span>
+        <p>무료 배송 2회 제공<br>전용 레시피 제공</p>
+      </article>
+
+      <article class="plan-card">
+        <h3>12개월</h3>
+        <span class="badge">25% OFF</span>
+        <p>무료 배송 3회 제공<br>전용 굿즈 랜덤 제공</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 구독 장점 -->
+  <section class="sub-section">
+    <h2>구독의 장점 3가지</h2>
+
+    <div class="benefit-wrap">
+      <article class="benefit-card">
+        <img src="./images/subscribe_icon_01.png" alt="장점1">
+        <strong>더 편리하게</strong>
+        <p>원하는 캡슐</p>
+        <p>자동 반복 배송</p>
+      </article>
+
+      <article class="benefit-card">
+        <img src="./images/subscribe_icon_02.png" alt="장점2">
+        <strong>더 저렴하게</strong>
+        <p>최대 15% 할인</p>
+        <p>구독 전용 가격</p>
+      </article>
+
+      <article class="benefit-card">
+        <img src="./images/subscribe_icon_03.png" alt="장점3">
+        <strong>더 자유롭게</strong>
+        <p>앱에서 10초 만에 변경</p>
+        <p>자유로운 일시정지·해지</p>
+        
+      </article>
+    </div>
+  </section>
+
+  <!-- 구독 이벤트 -->
+  <section class="sub-section">
+    <h2>구독 이벤트</h2>
+    <div class="sub-event">
+      <img src="./images/hero3.png" alt="구독 이벤트">
+    </div>
+  </section>
+  <section class="sub-section">
+    <h2>구독 FAQ</h2>
+    <div class="sub-event">
+      <img src="./images/subscribe_img2.png" alt="구독 FAQ">
+    </div>
+  </section>
+
+</main>
+
+<!-- Tab Bar -->
+<nav class="tab-bar">
+  <a href="home.html">
+    <button>
+      <span class="icon"><img src="./images/icons_home.png"></span>
+      <span class="label">홈</span>
+    </button>
+  </a>
+
+  <a href="shop.html">
+    <button>
+      <span class="icon"><img src="./images/icons_search.png"></span>
+      <span class="label">쇼핑하기</span>
+    </button>
+  </a>
+
+  <a href="cart.html">
+    <button>
+      <span class="icon"><img src="./images/icons_bag.png"></span>
+      <span class="label">장바구니</span>
+    </button>
+  </a>
+
+  <a href="subscribe.html">
+    <button class="active">
+      <span class="icon"><img src="./images/icons_redo_02.png"></span>
+      <span class="label">구독하기</span>
+    </button>
+  </a>
+
+  <a href="community.html">
+    <button>
+      <span class="icon"><img src="./images/icons_comm.png"></span>
+      <span class="label">커뮤니티</span>
+    </button>
+  </a>
+</nav>
+
+
+<!-- JS -->
+<script src="./js/subscribe.js"></script>
+</body>
+</html>

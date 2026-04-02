@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+
+
+/* =========================
+   Recipe Create Form
+========================= */
+
+.page {
+  min-height: 100vh;
+  background: #f7f4ef;
+}
+
+/* =========================
+   Header (Recipe Create)
+   기준: id.css와 동일
+========================= */
+
+.header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 16px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.header .title {
+  position: absolute;
+  left: 60px;
+  right: 16px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/* Content */
+.content {
+  padding: 20px;
+}
+
+/* Form Section */
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #4a4038;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e0d7ce;
+  background: #fff;
+  font-size: 14px;
+}
+
+/* Image Upload */
+.image-upload {
+  height: 160px;
+  border-radius: 16px;
+  background: #ede6dd;
+  border: 2px dashed #d4c7bb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8a7f75;
+}
+
+.image-upload img {
+  width: 36px;
+  opacity: 0.6;
+}
+
+/* Author Preview */
+.author-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-preview img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.author-preview strong {
+  font-size: 14px;
+}
+
+.author-preview span {
+  font-size: 12px;
+  color: #8a7f75;
+}
+
+/* Submit */
+.submit-wrap {
+  padding: 16px 20px;
+  background: #f7f4ef;
+  position: sticky;
+  bottom: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  background: #c9a88a;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+

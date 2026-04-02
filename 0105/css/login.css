@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  background: #f6f3ee;
+  color: #1a1a1a;
+}
+
+
+/* Layout */
+.login-wrap {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px 48px; /* 🔴 위 여백 증가 */
+}
+
+/* Header */
+.header {
+  margin-bottom: 120px; /* 🔴 로고 ↔ Login 간격 */
+}
+
+.logo {
+  width: 120px;
+}
+
+/* Login Section */
+.login-section h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.login-form span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.login-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b8b2aa;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.login-form input::placeholder {
+  color: #b8b2aa;   /* 시안 느낌의 연한 베이지/그레이 */
+  font-weight: 400;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-bottom-color: #8f6f54;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 32px;
+  background-color: #c6a88f;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Links */
+.login-links {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: #9a948c;
+}
+
+.login-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-links span {
+  margin: 0 6px;
+}
+
+/* SNS */
+.sns-section {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.sns-section p {
+  font-size: 12px;
+  color: #9a948c;
+  margin-bottom: 20px;
+}
+
+.sns-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.sns-icons button {
+  width: 36px;
+  height: 36px; 
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sns-icons img {
+  width: 36px;
+}

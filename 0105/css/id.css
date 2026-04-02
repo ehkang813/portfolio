@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  background: #f6f3ee;
+  color: #1a1a1a;
+}
+
+
+.header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 16px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* 아이콘 크기 고정 */
+.back-btn img,
+.back-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  position: absolute;
+  left: 60px;
+  right: 16px;          /* 추가 */
+  white-space: nowrap;  /* 추가 */
+  overflow: hidden;     /* 추가 */
+  text-overflow: ellipsis; /* 추가 */
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  background: #ede9e4;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 28px;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  background: transparent;
+  color: #9a948c;
+}
+
+.tab.active {
+  background: #fff;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #e1ddd8;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #b8b2aa;
+}
+
+.phone-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+/* 입력 한 줄 공통 래퍼 */
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px; /* ⭐ 핵심: 높이 고정 */
+}
+
+/* input은 항상 꽉 차게 */
+.field-row .input {
+  flex: 1;
+  height: 100%;
+}
+
+
+.cert-btn {
+  width: 96px;
+  border-radius: 10px;
+  border: none;
+  background: #e0dcd6;
+  color: #8f8a83;
+  font-size: 12px;
+  height: 100%;
+}
+
+.submit {
+  margin-top: 24px;
+  height: 52px;
+  border-radius: 12px;
+  border: none;
+  background: #d6d2cd;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit:enabled {
+  background: #c6a88f;
+}
+
+.hidden {
+  display: none;
+}

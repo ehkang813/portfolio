@@ -1,0 +1,7 @@
+const backBtn = document.getElementById("backBtn");
+
+if (backBtn) {
+  backBtn.addEventListener("click", () => {
+    history.back();
+  });
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/best-recipe-detail.css">
+</head>
+
+
+<body>
+
+<!-- Header -->
+<header class="header">
+  <button class="back-btn" type="button">
+    <img src="./images/back.png" alt="뒤로가기">
+  </button>
+  <h1 class="title">베스트 레시피</h1>
+</header>
+
+
+<main class="detail-container">
+
+  <!-- 레시피 + 댓글을 감싸는 큰 박스 -->
+  <section class="detail-box">
+
+    <!-- ===================
+         레시피 박스
+    =================== -->
+    <article class="recipe-box">
+
+      <!-- 이미지 -->
+      <img class="recipe-thumb"
+           src="./images/community_best_01.png"
+           alt="피스타치오 크림라떼">
+
+      <!-- 제목 -->
+      <h2 class="recipe-title">피스타치오 크림라떼</h2>
+
+      <!-- 작성자 + 리액션 -->
+      <div class="recipe-meta">
+        <div class="author">
+          <img class="avatar" src="./images/user_02.png" alt="지나">
+          <div class="author-text">
+            <span class="name">지나</span>
+            <span class="job">여행작가</span>
+          </div>
+        </div>
+
+        <div class="reaction">
+          <span>
+            <img src="./images/icons_heart.png" alt="하트아이콘">
+            504
+          </span>
+          <span>
+            <img src="./images/icons_bubble.png" alt="말풍선아이콘">
+            87
+          </span>
+        </div>
+      </div>
+
+      <!-- 해시태그 -->
+      <p class="tags">
+        #이색커피 #시칠리아의맛 #고소한맛
+      </p>
+
+      <!-- 재료 -->
+      <div class="recipe-section">
+        <h3>재료</h3>
+        <ul>
+          <li>네스프레소 캡슐 (콜롬비아 또는 비앙코 레제로 추천) 1개</li>
+          <li>피스타치오 페이스트 15g (시판 제품 또는 직접 만든 것)</li>
+          <li>우유 150ml</li>
+          <li>설탕 또는 연유 5g (선택 사항, 단맛 조절용)</li>
+          <li>가니쉬: 다진 피스타치오, 피스타치오 페이스트 드리즐</li>
+        </ul>
+      </div>
+
+      <!-- 만드는 법 -->
+      <div class="recipe-section">
+        <h3>지나's 레시피 비밀</h3>
+        <ol>
+          <li>1. 잔 바닥에 피스타치오 페이스트를 넣어줍니다. 
+              설탕이나 연유를 넣는다면 이때 함께 넣어 잘 섞어줍니다. </li>
+          <li>2. 네스프레소 머신으로 캡슐을 추출하여 
+            에스프레소를 만들어 페이스트 위에 부어 잘 저어줍니다. 
+            (피스타치오 페이스트가 따뜻한 에스프레소에 잘 녹아요!)</li>
+          <li>3. 따뜻하게 데운 우유를 조심스럽게 부어줍니다.</li>
+          <li>4. 취향에 따라 우유 거품을 올리고, 
+            다진 피스타치오와 피스타치오 페이스트로 장식하면 완성!</li>
+        </ol>
+      </div>
+
+      <!-- 레시피 노트 -->
+      <div class="recipe-section">
+        <h3>지나's 한마디</h3>
+        <p>
+          이 라떼는 특히 겨울이나 비 오는 날에 마시면 포근하고 따뜻한 느낌을 줘요. 따뜻한 담요를 덮고 책 한 권과 함께라면 완벽한 순간이죠!
+        </p>
+      </div>
+
+    </article>
+
+    <!-- ===================
+         댓글 박스
+    =================== -->
+    <article class="comment-box">
+
+      <h3 class="comment-title">댓글</h3>
+
+      <!-- 다른 유저 댓글 -->
+<!-- 댓글 1 -->
+<article class="comment-item">
+  <img src="./images/user_04.png" alt="소린">
+
+  <div class="comment-body">
+    <div class="comment-head">
+      <span class="comment-name">소린</span>
+      <span class="comment-time">5분 전</span>
+    </div>
+
+    <p class="comment-text">
+      레시피대로 연유 대신 꿀을 넣었더니 풍미가 훨씬 살아납니다. 
+      고소한데 향긋해서 육아 스트레스가 날아가는 느낌! 
+      지나님 덕분에 행복해요😊
+    </p>
+
+    <button class="reply-btn">답글 달기</button>
+  </div>
+
+  <div class="comment-like">
+    <img src="./images/icons_heart.png" alt="좋아요">
+    <span>1</span>
+  </div>
+</article>
+
+<!-- 댓글 2 -->
+<article class="comment-item">
+  <img src="./images/user_08.png" alt="민정">
+
+  <div class="comment-body">
+    <div class="comment-head">
+      <span class="comment-name">민정</span>
+      <span class="comment-time">8분 전</span>
+    </div>
+
+    <p class="comment-text">
+      레시피대로 했는데 진짜 풍미가 좋네요!
+      고소하면서 향이 살아있어요.
+      다음에 친구들 오면 또 해먹을래요 ☕
+    </p>
+
+    <button class="reply-btn">답글 달기</button>
+  </div>
+
+  <div class="comment-like">
+    <img src="./images/icons_heart.png" alt="좋아요">
+    <span>3</span>
+  </div>
+</article>
+
+<!-- 댓글 3 -->
+<article class="comment-item">
+  <img src="./images/user_03.png" alt="정윤">
+
+  <div class="comment-body">
+    <div class="comment-head">
+      <span class="comment-name">정윤</span>
+      <span class="comment-time">20분 전</span>
+    </div>
+
+    <p class="comment-text">
+      저는 비앙코 레제로 캡슐로 했더니 부드러움이 두 배! 
+      고소한 견과류 향이 캡슐 향이랑 찰떡궁합이에요. 
+      다음에 친구들 오면 꼭 해줄 거예요.
+    </p>
+
+    <button class="reply-btn">답글 달기</button>
+  </div>
+
+  <div class="comment-like">
+    <img src="./images/icons_heart.png" alt="좋아요">
+    <span>11</span>
+  </div>
+</article>
+
+
+
+    </article>
+
+  </section>
+
+</main>
+
+<!-- 댓글 입력창 -->
+<div class="comment-input">
+  <input type="text" placeholder="댓글을 입력하세요">
+  <button type="button">
+    <img src="./images/icons_up.png" alt="보내기">
+  </button>
+</div>
+
+
+<!-- back js -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) backBtn.addEventListener('click', () => history.back());
+  });
+</script>
+
+</body>
+</html>

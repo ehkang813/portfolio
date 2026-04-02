@@ -1,0 +1,623 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  color: #1c1c1c;
+  background: #fff;
+  /* min-height: 100dvh; */
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+  overflow-y: auto;     /* ⭐ 스크롤은 허용 */
+  overflow-x: hidden;
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari */
+}
+
+/* =========================
+   Header
+========================= */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ✅ 좌/우 분리 */
+  /* gap: 8px; */
+
+  background: #f7f4ef;
+  border-bottom: 1px solid #e5ded6;
+  z-index: 100;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* 햄버거 버튼과 텍스트 간격 */
+}
+
+.menu-btn {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -160px;
+  width: 160px;
+  height: 100%;
+  background: #F7F4EF;
+  padding: 80px 20px;
+  transition: left 0.3s ease;
+  z-index: 200;
+}
+
+.side-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px; /* 세로는 줄이고, 좌우 여유 */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.side-menu a img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  padding: 4px;        /* ✅ 아이콘과 배경 사이 여백 */
+}
+
+.side-menu a span {
+  line-height: 1;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 150;
+}
+
+.side-menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* side menu hover / active – vivid accent */
+.side-menu a:hover,
+.side-menu a:active {
+  color: #c47a2c;
+  background: rgba(196, 122, 44, 0.12);
+  border-radius: 12px;
+}
+
+.side-menu a:hover img,
+.side-menu a:active img {
+  filter: brightness(0) saturate(100%)
+          invert(56%) sepia(72%)
+          saturate(480%)
+          hue-rotate(2deg)
+          brightness(95%)
+          contrast(105%);
+}
+
+
+
+
+
+/* =========================
+   Main Layout
+========================= */
+.home-main {
+  padding: 80px 20px calc(100px + env(safe-area-inset-bottom));
+}
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  position: relative;
+  height: 250px;
+  margin-bottom: 24px;
+
+  border-radius: 14px;   /* ⭕ 여기로 이동 */
+  overflow: hidden;      /* ⭕ 여기로 이동 */
+}
+
+.hero-track {
+  height: 100%;
+  display: flex;
+}
+
+
+
+.hero-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 250px; /* 부모 높이와 동일하게 고정 */
+  object-fit: cover;
+  display: block; /* 하단 미세 공백 제거 */
+}
+
+.hero-title {
+  position: absolute;
+  top: 20px;        /* 상단 여백 */
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 2;       /* 이미지 위로 */
+  width: 100%;
+  text-align: center;
+}
+
+.hero-title h2 {
+  display: inline-block;
+  padding: 8px 20px ;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.45);
+  /* backdrop-filter: blur(6px); */
+
+  color: #222;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 10px rgba(255,255,255,0.8);
+}
+
+
+.hero-dots {
+  /* z-index를 더 높여서 이미지 위로 확실히 올립니다 */
+  z-index: 20; 
+  bottom: 16px; /* 아이폰 하단 바 간섭을 피해 조금 더 올림 */
+}
+
+.hero-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+
+.hero-dots .dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* =========================
+   Section
+========================= */
+.section {
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Horizontal Scroll
+========================= */
+.h-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  margin: 0 -20px;
+  padding: 0 20px;
+  scrollbar-width: none;
+}
+
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   Daily Routine Card (FIXED)
+========================= */
+.routine-card {
+  width: 280px;
+  flex-shrink: 0;
+  background: #F7F4EF;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.routine-card .thumb {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.routine-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.routine-card .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.routine-card strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.routine-card p {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================
+   Product Card (FIXED)
+========================= */
+.product-card.horizontal {
+  position: relative;
+  width: 280px;
+  flex-shrink: 0;
+  background: #F7F4EF;
+  padding: 8px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.product-card.horizontal .thumb {
+  width: 100px;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.product-card.horizontal .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card.horizontal .info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-card.horizontal h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card.horizontal .desc {
+  font-size: 12px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card.horizontal .price {
+  margin-top: auto;
+}
+
+.product-card.horizontal .price strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.product-card.horizontal .price span {
+  font-size: 11px;
+  color: #888;
+}
+
+.product-card.horizontal .add {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #b89b7a;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* =========================
+   Event Banner
+========================= */
+.event {
+  margin-top: 24px;
+}
+
+.event-info {
+  margin-bottom: 12px;
+}
+
+.event-info h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.event-info p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.event-banner {
+  position: relative;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.event-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.event-btn {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 3px solid #fff;
+
+  background: #D8C59A;
+  color: #3b2a1a;
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+
+
+
+/* =========================
+   Bottom Tab Bar
+========================= */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 72px;
+  background: #F7F4EF;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 1px solid #e5e5e5;
+  z-index: 100;
+}
+
+.tab-bar button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.tab-bar .icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.tab-bar .label {
+  font-size: 12px;
+  color: #777;
+}
+
+.tab-bar button.active .label {
+  color: #1c1c1c;
+  font-weight: 700;
+}
+
+
+
+/* h-scroll 기본 */
+/* h-scroll 기본 */
+.h-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+.h-scroll {
+  scrollbar-width: none;
+}
+
+/* wrapper */
+.h-scroll-wrap {
+  position: relative;
+  overflow: visible; /* 버튼 잘리지 않게 */
+}
+
+
+
+/* 넷플릭스 스타일 좌우 버튼 */
+/* h-scroll 기본 */
+/* h-scroll 기본 */
+.h-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+.h-scroll {
+  scrollbar-width: none;
+}
+
+/* wrapper */
+.h-scroll-wrap {
+  position: relative;
+  overflow: visible; /* 버튼 잘리지 않게 */
+}
+
+/* 좌우 네비게이션 버튼 */
+.h-nav-btn {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 80px;
+  
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  
+  z-index: 50;
+  
+  transition: color 0.2s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.h-nav-btn:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.h-nav-btn.prev {
+  left: -20px;
+}
+
+.h-nav-btn.next {
+  right: -20px;
+}
+
+/* 스크롤이 끝에 도달하면 버튼 숨기기 */
+.h-nav-btn.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

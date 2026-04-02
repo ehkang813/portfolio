@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  background: #f6f3ee;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+
+/* =========================
+   Walkthrough Layout
+========================= */
+.walkthrough {
+  min-height: 100dvh;
+  padding: 24px 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   Slides Wrapper
+========================= */
+.slides {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   Slide
+========================= */
+.slide {
+  position: absolute;
+  inset: 0;
+
+  display: none;
+  flex-direction: column;
+  padding-top: 100px;
+
+  overflow-y: auto;                 /* 🔥 잘림 방지 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.slide.active {
+  display: flex;
+}
+
+/* =========================
+   Visual Area
+========================= */
+.visual {
+  flex-shrink: 0;
+  min-height: 36vh;
+  max-height: 42vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 카드 슬라이드(2번)는 조금 더 여유 */
+/* .slide:nth-child(2) .visual {
+  min-height: 40vh;
+  max-height: 46vh;
+} */
+
+/* =========================
+   Images
+========================= */
+.visual img {
+  width: 60%;
+  max-width: 230px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* 1번 슬라이드 */
+.slide:nth-child(1) img {
+  width: 50%;
+}
+
+/* 3번 슬라이드 */
+.slide:nth-child(3) img {
+  width: 25%;
+}
+
+/* =========================
+   Content Area
+========================= */
+.content {
+  text-align: center;
+  padding: 12px 0 24px;
+}
+
+.content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #7b6f66;
+}
+
+/* =========================
+   Slide 2 – Plan Cards
+========================= */
+.plan-cards {
+  display: flex;
+  gap: 12px;
+  transform: scale(0.95);
+  transform-origin: center top;
+}
+
+.plan {
+  width: 102px;
+  padding: 16px 8px;
+  border: 2px solid #fff;
+  background: #efe8de;
+  border-radius: 14px;
+  text-align: center;
+
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.plan.active {
+  background: #e3d2bd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.plan h3 {
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  border-radius: 10px;
+  background: #c7a88a;
+  color: #fff;
+}
+
+.plan p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #6f6259;
+}
+
+/* =========================
+   Pagination
+========================= */
+.pagination {
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  bottom: calc(
+    16px +                /* CTA bottom */
+    env(safe-area-inset-bottom) +
+    56px +                /* CTA height */
+    36px                  /* 원하는 간격 */
+  );
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  z-index: 110;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: #c7a88a;
+}
+
+/* =========================
+   CTA (분리된 버튼)
+========================= */
+.cta {
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  background: #c7a88a;
+  color: #fff;
+
+  z-index: 100;
+}
+
+@media (max-width: 360px) {
+  .plan {
+    width: 90px;
+  }
+
+  .plan-cards {
+    transform: scale(0.92);
+  }
+}

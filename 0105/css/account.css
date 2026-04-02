@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+
+
+
+
+/* =========================
+   Account Page Base
+========================= */
+.account {
+  padding: 80px 20px 20px; /* 헤더 높이만큼 상단 여백 */
+  background: #fff;
+  color: #222;
+}
+
+
+/* =========================
+   Header
+========================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  padding: 0 16px;
+  background: #F7F4EF;
+  border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+}
+
+
+.back-btn {
+  position: absolute;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 뒤로가기 아이콘 */
+.back-btn img,
+.back-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.title {
+  position: absolute;
+  left: 60px;
+  right: 16px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   Common Card Style
+========================= */
+.account-card,
+.account-item {
+  background: #F7F4EF;
+  padding: 16px;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================
+   Profile Card
+========================= */
+.account-card.profile {
+  margin-bottom: 24px;
+}
+
+.account-card .text {
+  flex: 1;
+}
+
+.account-card .label {
+  font-size: 13px;
+  color: #666;
+}
+
+.account-card strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* =========================
+   Account List
+========================= */
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.account-item {
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-item span {
+  flex: 1;
+  font-size: 15px;
+  color: #666;
+}
+
+/* =========================
+   Logout (Separated Tone)
+========================= */
+.account-item.logout {
+  justify-content: space-between;
+}
+
+.account-item.logout span {
+  color: #C04A3A; /* 네스프레소 무드 레드 브라운 */
+  font-weight: 600;
+  text-align: center;
+}
+
+.account-item.logout:active {
+  background: #EFEAE2;
+}
+
+/* =========================
+   Arrow Icon
+========================= */
+.arrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   App Version
+========================= */
+.version {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 12px;
+}

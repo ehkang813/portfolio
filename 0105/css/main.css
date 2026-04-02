@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+
+
+
+/* Body */
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* Splash */
+.splash {
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f3ee;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo + Spinner */
+.logo-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 70px;
+  z-index: 2;
+}
+
+/* Spinner */
+.spinner {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.05)
+  );
+
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    inset 0 0 8px rgba(255,255,255,0.6),
+    0 8px 20px rgba(0,0,0,0.12);
+
+  animation: spin3d 1.6s linear infinite;
+}
+
+.spinner::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background-color: #f6f3ee;
+}
+
+@keyframes spin3d {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+.slide {
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide.active {
+  transform: translateX(0);
+}
+
+.slide.prev {
+  transform: translateX(-100%);
+}
+
+.slide.next {
+  transform: translateX(100%);
+}
+
+.slide.instant {
+  transition: none !important;
+}

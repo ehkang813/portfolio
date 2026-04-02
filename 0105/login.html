@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nespresso Login</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/login.css" />
+
+  <!-- Fonts -->
+  <!-- Noto Sans KR -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+<body>
+
+  <div class="login-wrap">
+
+    <!-- Logo -->
+    <header class="header">
+      <img src="./images/logo_nespresso.png" alt="Nespresso" class="logo">
+    </header>
+
+    <!-- Login -->
+    <section class="login-section">
+      <h1>Login</h1>
+
+      <form class="login-form">
+        <label>
+          <span>아이디</span>
+          <input type="text" placeholder="아이디를 입력해 주세요." />
+        </label>
+
+        <label>
+          <span>비밀번호</span>
+          <input type="password" placeholder="비밀번호를 입력해 주세요." />
+        </label>
+
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
+
+      <div class="login-links">
+  <a href="#" id="findId">아이디찾기</a>
+  <span>|</span>
+  <a href="#" id="findPw">비밀번호찾기</a>
+  <span>|</span>
+  <a href="#" id="signup">회원가입</a>
+</div>
+
+    </section>
+
+    <!-- SNS Login -->
+    <section class="sns-section">
+      <p>SNS계정으로 로그인하기</p>
+
+      <div class="sns-icons">
+        <button><img src="./images/logo_naver.png" alt="Naver"></button>
+        <button><img src="./images/logo_kakao.png" alt="Kakao"></button>
+        <button><img src="./images/logo_facebook.png" alt="Facebook"></button>
+        <button><img src="./images/logo_apple.png" alt="Apple"></button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JS -->
+  <script src="./js/login.js"></script>
+</body>
+</html>

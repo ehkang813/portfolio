@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/recipe-create.css">
+</head>
+
+
+
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+<header class="header">
+  <button type="button" class="back-btn">
+  <img src="./images/back.png" alt="뒤로가기">
+</button>
+  <h1 class="title">레시피 작성하기</h1>
+</header>
+
+
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- 이미지 업로드 -->
+    <section class="form-section">
+      <label class="form-label">대표 이미지</label>
+      <div class="image-upload">
+        <img src="./images/placeholder_img.png" alt="대표이미지">
+        <span>이미지 추가</span>
+      </div>
+    </section>
+
+    <!-- 제목 -->
+    <section class="form-section">
+      <label class="form-label">레시피 제목</label>
+      <input type="text" placeholder="예: 오렌지 필 에스프레소">
+    </section>
+
+    <!-- 해시태그 -->
+    <section class="form-section">
+      <label class="form-label">해시태그</label>
+      <input type="text" placeholder="#이색커피 #시트러스향">
+    </section>
+
+    <!-- 설명 -->
+    <section class="form-section">
+      <label class="form-label">레시피 설명</label>
+      <textarea rows="5" placeholder="레시피의 특징이나 맛을 자유롭게 소개해주세요."></textarea>
+    </section>
+
+    <!-- 작성자 -->
+    <section class="form-section author-preview">
+      <img src="./images/user_02.png" alt="작성자">
+      <div>
+        <strong>사라</strong>
+        <span>카페 오너</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Submit -->
+  <div class="submit-wrap">
+    <button class="submit-btn">레시피 등록하기</button>
+  </div>
+
+</div>
+
+
+<script>
+  const backBtn = document.querySelector('.back-btn');
+  backBtn.addEventListener('click', function () {
+    history.back();
+  });
+</script>
+
+</body>
+</html>

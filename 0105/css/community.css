@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+
+html, body {
+  height: 100%;
+  overflow-y: auto;     /* ⭐ 스크롤은 허용 */
+  overflow-x: hidden;
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari */
+}
+
+
+
+/* =========================
+   Header (Left Aligned)
+========================= */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  padding: 0 16px;
+  background: #F7F4EF;
+  border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 100;
+}
+
+/* 왼쪽 그룹: 아이콘 + 타이틀 */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 👉 여기서 간격 조절 */
+}
+
+/* 뒤로가기 */
+.back-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 타이틀 */
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+
+  white-space: nowrap;
+}
+
+/* 프로필 */
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+
+/* =========================
+   Layout Fix – Header overlap
+========================= */
+.home-main {
+  padding: 76px 20px 88px;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 20px 0 8px;   /* 카드와 거리 */
+}
+
+/* =========================
+   Best Recipe Card (Final)
+========================= */
+
+.recipe-card.best {
+  width: 160px;
+  flex-shrink: 0;
+
+  background: #efe8de;
+  border-radius: 16px;
+  border: 2px solid #fff;
+
+  box-shadow:
+    0 0 4px -1px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 첫 카드 바깥 a를 카드로 사용 */
+.h-scroll > a.recipe-card.best {
+  border: 2px solid #fff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 0 4px -1px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  /* background: #efe8de; */
+  overflow: hidden;
+
+  /* transition: box-shadow 0.25s ease, transform 0.25s ease; */
+}
+
+/* 내부 article은 시각적 박스 제거 */
+.h-scroll > a.recipe-card.best > .recipe-card.best {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+
+
+
+
+/* 썸네일 */
+.recipe-card.best .thumb {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* 카드 본문 */
+.recipe-card.best .card-body {
+  padding: 8px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* 제목 */
+.recipe-card.best .title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+/* 작성자 */
+.recipe-card.best .author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.recipe-card.best .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* 이름 + 직업 */
+.recipe-card.best .author-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipe-card.best .name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.recipe-card.best .job {
+  font-size: 11px;
+  color: #8a7f75;
+}
+
+/* 화살표 (사이즈 절반) */
+.recipe-card.best .arrow img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+}
+
+/* 해시태그 */
+.recipe-card.best .tags {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #7b6f66;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+/* 리액션 */
+.recipe-card.best .reaction {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;   /* ⭐ 가로 중앙 */
+  align-items: center;       /* ⭐ 세로 중앙 */
+  gap: 12px;
+  font-size: 11px;
+  color: #7b6f66;
+}
+
+.recipe-card.best .reaction img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+
+/* =========================
+   Best Recipe Horizontal Slide
+========================= */
+
+.h-scroll {
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 8px;          /* 스크롤바 여유 */
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 스크롤바 숨기기 (모바일 감성) */
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 카드 스냅 */
+.h-scroll .recipe-card.best {
+  scroll-snap-align: start;
+}
+
+
+
+
+/* =========================
+   Weekly Recipe – Split Card
+========================= */
+
+.v-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recipe-card.split {
+  display: flex;
+  gap: 14px;
+
+  background: #efe8de;
+  border-radius: 16px;
+  border: 2px solid #fff;
+
+  box-shadow:
+    0 0 4px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  padding: 12px;
+}
+
+/* LEFT */
+.card-left {
+  width: 120px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-left .thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.card-left .reaction {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #7b6f66;
+}
+
+.card-left .reaction img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+/* RIGHT */
+.card-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-right .title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-right .author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.card-right .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.card-right .author-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-right .name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-right .job {
+  font-size: 11px;
+  color: #8a7f75;
+}
+
+.card-right .arrow img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+}
+
+.card-right .tags {
+  font-size: 11px;
+  color: #7b6f66;
+  margin-bottom: 6px;
+}
+
+.card-right .desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6f6259;
+}
+
+
+
+/* 작성 버튼 */
+.write-btn {
+  display: block;
+  width: 100%;
+  height: 48px;
+
+  background: #c9a88a;
+  color: #fff;
+
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+
+  text-align: center;
+  line-height: 48px;
+
+  text-decoration: none; /* 핵심 */
+
+  margin-top: 24px;
+}
+
+
+
+/* =========================
+   Bottom Tab Bar
+========================= */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 72px;
+  background: #F7F4EF;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 1px solid #e5e5e5;
+  z-index: 100;
+}
+
+.tab-bar button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.tab-bar .icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.tab-bar .label {
+  font-size: 12px;
+  color: #777;
+}
+
+.tab-bar button.active .label {
+  color: #1c1c1c;
+  font-weight: 700;
+}
+
+
+
+/* 넷플릭스 스타일 좌우 버튼 */
+/* h-scroll 기본 */
+/* h-scroll 기본 */
+.h-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-left: 8px; 
+  scrollbar-width: none;
+}
+
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* wrapper */
+.h-scroll-wrap {
+  position: relative;
+  overflow: visible; /* 버튼 잘리지 않게 */
+}
+
+/* 좌우 네비게이션 버튼 */
+.h-nav-btn {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 80px;
+  
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  
+  z-index: 50;
+  
+  transition: color 0.2s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.h-nav-btn:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.h-nav-btn.prev {
+  left: -20px;
+}
+
+.h-nav-btn.next {
+  right: -20px;
+}
+
+/* 스크롤이 끝에 도달하면 버튼 숨기기 */
+.h-nav-btn.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+
+
+

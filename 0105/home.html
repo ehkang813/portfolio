@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="app-header home-header">
+  <div class="left-group">
+    <button class="menu-btn" id="menuBtn">
+      <img src="./images/icons_menu.png" alt="메뉴">
+    </button>
+    <h1 class="header-title">홈</h1>
+  </div>
+
+  <div class="profile">
+    <a href="account.html">
+      <img class="profile-img" src="./images/profile.png" alt="유저">
+    </a>
+  </div>
+</header>
+
+
+<div class="side-menu-overlay" id="sideMenuOverlay"></div>
+
+<nav class="side-menu" id="sideMenu">
+  <a href="home.html">
+    <img src="./images/icons_home.png" alt="홈">
+    <span>홈</span>
+  </a>
+
+  <a href="shop.html">
+    <img src="./images/icons_search.png" alt="쇼핑하기">
+    <span>쇼핑하기</span>
+  </a>
+
+  <a href="cart.html">
+    <img src="./images/icons_bag.png" alt="장바구니">
+    <span>장바구니</span>
+  </a>
+
+  <a href="subscribe.html">
+    <img src="./images/icons_redo.png" alt="구독하기">
+    <span>구독하기</span>
+  </a>
+
+  <a href="community.html">
+    <img src="./images/icons_comm.png" alt="커뮤니티">
+    <span>커뮤니티</span>
+  </a>
+</nav>
+
+
+
+
+<!-- Main -->
+<main class="home-main">
+
+  <!-- Hero Banner -->
+<section class="hero">
+  <div class="hero-track">
+
+    <div class="hero-slide">
+      <div class="hero-image">
+        <img src="./images/hero1.png">
+      </div>
+      <!-- <div class="hero-title">
+        <h2>오늘의 취향 추천을 만나보세요</h2>
+      </div> -->
+    </div>
+
+    <div class="hero-slide">
+      <div class="hero-image">
+        <img src="./images/hero2.png">
+      </div>
+      <div class="hero-title">
+        <h2>홀리데이 캡슐로 특별한 겨울을</h2>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <div class="hero-image">
+        <img src="./images/hero3.png">
+      </div>
+      <!-- <div class="hero-title">
+        <h2>혜택은 크게, 부담없이 구독으로 절약하세요</h2>
+      </div> -->
+    </div>
+
+  </div>
+
+  <div class="hero-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- Daily Routine -->
+  <section class="section">
+    <h2>데일리 루틴 추천</h2>
+
+    <div class="h-scroll">
+      <article class="routine-card">
+        <div class="thumb">
+          <img src="./images/main_daily_1.png" alt="데일리추천1">
+        </div>
+        <div class="text">
+          <strong>쌀쌀한 바람이 불어올 때</strong>
+          <p>
+            아침저녁으로 차가운 바람이 맴도는 계절,
+            마음까지 녹여줄 따뜻하고 달콤한 카페 모카 한 잔이 생각납니다.
+          </p>
+        </div>
+      </article>
+
+      <article class="routine-card">
+        <div class="thumb">
+          <img src="./images/main_daily_2.png" alt="데일리추천2">
+        </div>
+        <div class="text">
+          <strong>바쁜 일상 속 여유</strong>
+          <p>
+            시원한 커피가 어우러진 아이스 바닐라 라떼가
+            지친 마음을 어루만지고 소소한 행복을 선사합니다.
+          </p>
+        </div>
+      </article>
+
+      <article class="routine-card">
+        <div class="thumb">
+          <img src="./images/main_daily_3.png" alt="데일리추천3">
+        </div>
+        <div class="text">
+          <strong>커피에 집중하는 시간</strong>
+          <p>
+            혀끝에 닿는 부드러운 크레마와 깊은 풍미가
+            차가운 공기를 녹여냅니다.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Frequently Ordered -->
+  <section class="section">
+    <h2>자주 주문한 상품</h2>
+
+    <div class="h-scroll">
+      <article class="product-card horizontal frequent">
+        <div class="thumb">
+          <img src="./images/main_order_01.png" alt="진생 딜라이트">
+        </div>
+
+        <div class="info">
+          <h3>진생 딜라이트</h3>
+          <p class="desc">인삼 추출을 함유한 캐러멜향 커피</p>
+
+          <div class="price">
+            <strong>₩11,000</strong><br>
+            <span>10캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+
+      <article class="product-card horizontal frequent">
+        <div class="thumb">
+          <img src="./images/main_order_02.png" alt="아이스 레제로">
+        </div>
+
+        <div class="info">
+          <h3>아이스 레제로</h3>
+          <p class="desc">아이스로 좋은 과일향</p>
+
+          <div class="price">
+            <strong>₩8,700</strong><br>
+            <span>10캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+
+      <article class="product-card horizontal frequent">
+        <div class="thumb">
+          <img src="./images/main_order_03.png" alt="더블 에스프레소 돌체">
+        </div>
+
+        <div class="info">
+          <h3>더블 에스프레소 돌체</h3>
+          <p class="desc">부드럽고 달콤한 캐러멜향</p>
+
+          <div class="price">
+            <strong>₩11,000</strong><br>
+            <span>10캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+
+      <article class="product-card horizontal frequent">
+        <div class="thumb">
+          <img src="./images/main_order_04.png" alt="액티브">
+        </div>
+
+        <div class="info">
+          <h3>액티브</h3>
+          <p class="desc">아이스로 즐기기 좋은 비타민 B6가 함유된 커피</p>
+
+          <div class="price">
+            <strong>₩11,000</strong><br>
+            <span>10캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Recommended -->
+  <section class="section">
+    <h2>추천 상품</h2>
+
+    <div class="h-scroll">
+      <article class="product-card horizontal recommend">
+        <div class="thumb">
+          <img src="./images/main_recom_01.png" alt="버츄오 디스커버리 100팩">
+        </div>
+
+        <div class="info">
+          <h3>버츄오 디스커버리 <br>100팩</h3>
+          <p class="desc">다양한 스타일의 커피를 한번에 만나보세요</p>
+
+          <div class="price">
+            <strong>￦94,500</strong><br>
+            <span>100캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+
+      <article class="product-card horizontal recommend">
+        <div class="thumb">
+          <img src="./images/main_recom_02.png" alt="버츄오 마일드 셀렉션 6종">
+        </div>
+
+        <div class="info">
+          <h3>버츄오 마일드 셀렉션 <br>6종</h3>
+          <p class="desc">네스프레소가 엄선한 부드럽고 마일드한 커피</p>
+
+          <div class="price">
+            <strong>￦57,200</strong><br>
+            <span>60캡슐</span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+
+      <article class="product-card horizontal recommend">
+        <div class="thumb">
+          <img src="./images/main_recom_03.png" alt="미아 디스펜서, 라지">
+        </div>
+
+        <div class="info">
+          <h3>미아 디스펜서, 라지 <br></h3>
+          <p class="desc">최애 커피를 담는 보관함</p>
+
+          <div class="price">
+            <strong>￦52,000</strong><br>
+            <span><br></span>
+          </div>
+        </div>
+
+        <button class="add">+</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Event Banner -->
+  <section class="event">
+    <div class="event-info">
+      <h3>시즌 한정 캡슐 런칭 이벤트</h3>
+      <p>
+        1. 시즌 한정 캡슐 10슬리브 구매 시<br>
+        → 전용 머그 or 오너먼트 1개 증정<br>
+        2. 20슬리브 이상 구매 시<br>
+        → 프리미엄 액세서리 업그레이드 증정
+      </p>
+    </div>
+
+    <div class="event-banner">
+      <img src="./images/main_event_01.png" alt="이벤트 배너1">
+      <button class="event-btn">바로가기</button>
+    </div>
+  </section>
+
+  <section class="event">
+    <div class="event-info">
+      <h3>나만의 레시피 공유 챌린지</h3>
+      <p>
+        1. 나만의 레시피 또는 나의 루틴 업로드 시<br>
+        → 참여자 전원 10% 할인 코드 제공<br>
+        2. 좋아요 TOP 10 레시피<br>
+        → 시즌 한정 캡슐 세트 증정
+      </p>
+    </div>
+
+    <div class="event-banner">
+      <img src="./images/main_event_02.png" alt="이벤트 배너2">
+      <button class="event-btn">바로가기</button>
+    </div>
+  </section>
+
+  <section class="event">
+    <div class="event-info">
+      <h3>머신 구매 혜택: '스마트 페이백'</h3>
+      <p>
+        1. 머신 + 캡슐 10 슬리브 구매 시 → 30% 할인<br>
+        2. 머신 + 캡슐 15 슬리브 구매 시 → 50% 할인<br>
+        3. 머신 + 구독 가입 동시 진행 시 → 추가 5% 할인<br>
+      </p>
+    </div>
+
+    <div class="event-banner">
+      <img src="./images/main_event_03.png" alt="이벤트 배너3">
+      <button class="event-btn">바로가기</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="tab-bar">
+
+  <a href="home.html">
+    <button class="active">
+      <span class="icon">
+        <img src="./images/icons_home_02.png" alt="홈">
+      </span>
+      <span class="label">홈</span>
+    </button>
+  </a>
+
+  <a href="shop.html">
+    <button>
+      <span class="icon">
+        <img src="./images/icons_search.png" alt="쇼핑하기">
+      </span>
+      <span class="label">쇼핑하기</span>
+    </button>
+  </a>
+
+  <a href="cart.html">
+    <button>
+      <span class="icon">
+        <img src="./images/icons_bag.png" alt="장바구니">
+      </span>
+      <span class="label">장바구니</span>
+    </button>
+  </a>
+
+  <a href="subscribe.html">
+    <button>
+      <span class="icon">
+        <img src="./images/icons_redo.png" alt="구독하기">
+      </span>
+      <span class="label">구독하기</span>
+    </button>
+  </a>
+
+  <a href="community.html">
+    <button>
+      <span class="icon">
+        <img src="./images/icons_comm.png" alt="커뮤니티">
+      </span>
+      <span class="label">커뮤니티</span>
+    </button>
+  </a>
+
+</nav>
+
+
+<script src="./js/home.js"></script>
+</body>
+</html>

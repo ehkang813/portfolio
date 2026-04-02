@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+/* =========================
+   Reset (시험에서 필수)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Base Style (시험에서 권장)
+========================= */
+body {
+  font-family: "Pretendard", "Noto Sans KR",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  background: #f6f3ee;
+  color: #1a1a1a;
+}
+
+
+/* Header */
+.header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.header.has-back .title {
+  position: absolute;
+  left: 60px;
+  right: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+/* ===== Form ===== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 14px;
+  background: #fff;
+}
+
+input::placeholder {
+  color: #b9b9b9;
+}
+
+.inline {
+  display: flex;
+  gap: 8px;
+}
+
+.sub-btn {
+  width: 96px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  background: #e0ddd6;
+  color: #777;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ===== Agreement ===== */
+.agree {
+  margin: 28px 0;
+  font-size: 14px;
+}
+
+.agree-all {
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e1db;
+  margin-bottom: 14px;
+}
+
+.agree input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #c6a88f; /* 네스프레소 톤 */
+  cursor: pointer;
+}
+
+.agree label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+
+
+/* ===== Button ===== */
+.primary-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  background: #d8c1a8;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}

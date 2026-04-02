@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Pretendard -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+
+<body>
+
+<header class="app-header">
+  <button class="back-btn" type="button">
+    <img src="./images/back.png" alt="뒤로가기">
+  </button>
+  <h1 class="header-title">장바구니</h1>
+</header>
+
+<main class="cart-container">
+
+  <!-- 장바구니 카드 -->
+  <section class="cart-box">
+
+    <article class="cart-item">
+      <img src="./images/main_order_01.png" alt="장바구니 커피1" class="thumb">
+
+      <div class="item-info">
+        <strong class="item-title">진생 딜라이트</strong>
+        <p class="item-desc">10캡슐</p>
+
+        <div class="item-bottom">
+          <div class="qty">
+            <button>-</button>
+            <span>2</span>
+            <button>+</button>
+          </div>
+
+          <div class="price">
+            <!-- <span class="sale">23%</span> -->
+            <strong>22,000원</strong>
+          </div>
+        </div>
+      </div>
+
+      <button class="remove">×</button>
+    </article>
+
+    <article class="cart-item">
+      <img src="./images/main_order_03.png" alt="장바구니 커피2" class="thumb">
+
+      <div class="item-info">
+        <strong class="item-title">더블 에스프레소 돌체</strong>
+        <p class="item-desc">10캡슐</p>
+
+        <div class="item-bottom">
+          <div class="qty">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+
+          <div class="price">
+            <!-- <span class="sale">23%</span> -->
+            <strong>11,000원</strong>
+          </div>
+        </div>
+      </div>
+
+      <button class="remove">×</button>
+    </article>
+
+    <div class="cart-summary">
+      <span>총 수량 3개</span>
+      <strong>33,000원</strong>
+    </div>
+
+  </section>
+
+  <!-- 결제 요약 -->
+  <section class="payment-box">
+    <h2>결제금액</h2>
+
+    <ul>
+      <li><span>상품금액</span><span>33,000원</span></li>
+      <li><span>배송비</span><span class="free">무료</span></li>
+    </ul>
+
+    <div class="total">
+      <span>총 결제금액</span>
+      <strong>33,000원</strong>
+    </div>
+  </section>
+
+  <button class="order-btn">주문하기</button>
+
+
+</main>
+
+<!-- Tab Bar -->
+<nav class="tab-bar">
+  <a href="home.html">
+    <button>
+      <span class="icon"><img src="./images/icons_home.png"></span>
+      <span class="label">홈</span>
+    </button>
+  </a>
+
+  <a href="shop.html">
+    <button>
+      <span class="icon"><img src="./images/icons_search.png"></span>
+      <span class="label">쇼핑하기</span>
+    </button>
+  </a>
+
+  <a href="cart.html">
+    <button class="active">
+      <span class="icon"><img src="./images/icons_bag_02.png"></span>
+      <span class="label">장바구니</span>
+    </button>
+  </a>
+
+  <a href="subscribe.html">
+    <button>
+      <span class="icon"><img src="./images/icons_redo.png"></span>
+      <span class="label">구독하기</span>
+    </button>
+  </a>
+
+  <a href="community.html">
+    <button>
+      <span class="icon"><img src="./images/icons_comm.png"></span>
+      <span class="label">커뮤니티</span>
+    </button>
+  </a>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) {
+      backBtn.addEventListener('click', function () {
+        history.back();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
