@@ -14,11 +14,9 @@ function updateNavigation() {
     const height = section.offsetHeight;
 
     if (scrollY >= top && scrollY < top + height) {
-      // dot 활성화
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
 
-      // header 메뉴 활성화
       navLinks.forEach(link => link.classList.remove('active'));
       navLinks[index].classList.add('active');
     }
@@ -46,9 +44,6 @@ navLinks.forEach(link => {
 window.addEventListener('scroll', updateNavigation);
 
 
-
-
-
 /* work 카테고리 전환 */
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -72,66 +67,183 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+
   /* ===== 모달 ===== */
-const modal = document.querySelector('.modal');
-const modalOverlay = document.querySelector('.modal-overlay');
-const modalClose = document.querySelector('.modal-close');
-const modalTitle = document.getElementById('modal-title');
-const modalImage = document.getElementById('modal-image');
-const modalDesc = document.querySelector('.modal-desc');
+  const modal = document.querySelector('.modal');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalClose = document.querySelector('.modal-close');
+  const modalTitle = document.getElementById('modal-title');
+  const modalImages = document.querySelectorAll('#modal-image'); // 중복 id 모두 선택
+  const modalDesc = document.querySelector('.modal-desc');
+  const modalLink = document.getElementById('modal-link');       // ✅ 선언 추가
+  const modalImageWrap = document.querySelector('.modal-image-wrap');
 
-document.querySelectorAll('.portfolio-item').forEach(item => {
-  item.addEventListener('click', () => {
-    modalTitle.textContent = item.dataset.title || 'Portfolio';
-    modalImage.src = item.dataset.image || '';
-    modalDesc.innerHTML = item.dataset.desc || ''; // ✅ 이것만
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      modalTitle.textContent = item.dataset.title || 'Portfolio';
+      modalDesc.innerHTML = item.dataset.desc || '';
 
-    modal.classList.add('open');
-    document.body.classList.add('modal-open'); // ✅ 추가
+      // 두 개의 #modal-image 모두 src 세팅
+      modalImages.forEach(img => {
+        img.src = item.dataset.image || '';
+      });
+
+      // 피그마 링크 처리
+      const link = item.dataset.link;
+      if (link) {
+        modalLink.href = link;
+        modalImageWrap.style.display = 'block'; // 링크 있으면 wrap 보이기
+      } else {
+        modalLink.removeAttribute('href');
+        modalImageWrap.style.display = 'none';  // 링크 없으면 wrap 숨기기
+      }
+
+      modal.classList.add('open');
+      document.body.classList.add('modal-open');
+    });
   });
-});
 
-modalOverlay.addEventListener('click', closeModal);
-modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
+  modalClose.addEventListener('click', closeModal);
 
-function closeModal() {
-  modal.classList.remove('open');
-  document.body.classList.remove('modal-open'); // ✅ 추가
-}
-
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+  }
 
 });
 
 
-
-// javascript.js 맨 아래에 이 코드를 복사해서 붙여넣으세요.
+// Google Forms 제출
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzj7FiC9rCYVmGiZ9FNo0bcYX8Rt_iESjHr4rU5FNajMIEr1ZiGCVGZhVLtKR2rMc20/exec';
 const form = document.getElementById('g-form');
 
 form.addEventListener('submit', e => {
-  e.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
-  
-  // 마케팅 UI 에티켓: 전송 중 버튼 비활성화
+  e.preventDefault();
+
   const submitBtn = form.querySelector('.btn-submit');
   submitBtn.disabled = true;
   submitBtn.innerText = "Sending...";
 
-  // FormData를 사용하여 폼의 모든 데이터를 자동으로 수집합니다.
-  fetch(scriptURL, { 
-    method: 'POST', 
-    body: new FormData(form) // 폼에 입력된 name="name", name="email" 등을 자동으로 묶어줍니다.
+  fetch(scriptURL, {
+    method: 'POST',
+    body: new FormData(form)
   })
   .then(response => {
     alert('메시지가 성공적으로 전송되었습니다! 강은혜 디자이너가 곧 연락드릴게요.');
     submitBtn.disabled = false;
     submitBtn.innerText = "Submit";
-    form.reset(); // 폼 초기화
+    form.reset();
   })
   .catch(error => {
     console.error('Error!', error.message);
     alert('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
     submitBtn.disabled = false;
     submitBtn.innerText = "Submit";
+  });
+});
+
+
+/* =====================
+   PROJECT FLOW (FINAL)
+===================== */
+
+const projectSteps = document.querySelectorAll('#project .step');
+const summaryImage = document.getElementById('summary-image');
+const prevBtn = document.querySelector('.summary-nav.prev');
+const nextBtn = document.querySelector('.summary-nav.next');
+const implBackBtn = document.querySelector('.impl-nav-back');
+
+const summaryImages = [
+  './images/nes_01.jpg',
+  './images/nes_02.jpg',
+  './images/nes_03.jpg',
+  './images/nes_04.jpg',
+  './images/nes_05.jpg',
+  './images/nes_06.jpg',
+  './images/nes_07.jpg',
+  './images/nes_08.jpg',
+  './images/nes_09.jpg',
+  './images/nes_10.jpg'
+];
+
+let currentIndex = 0;
+
+const projectIframe = document.querySelector('.device-frame iframe');
+const iframeSrc = projectIframe.getAttribute('src');
+
+function resetIframe() {
+  projectIframe.setAttribute('src', iframeSrc);
+}
+
+function showStep(index) {
+  projectSteps.forEach(step => step.classList.remove('active'));
+  projectSteps[index].classList.add('active');
+
+  if (index === 1) { // SUMMARY
+    prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextBtn.style.display = 'block';
+    implBackBtn.style.display = 'none';
+  }
+
+  if (index === 2) { // IMPLEMENTATION
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    implBackBtn.style.display = 'block';
+  }
+}
+
+function updateSummaryNav() {
+  prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+}
+
+/* PROJECT 시작 */
+function startProject() {
+  currentIndex = 0;
+  summaryImage.src = summaryImages[currentIndex];
+  updateSummaryNav();
+
+  showStep(0); // COVER
+
+  setTimeout(() => {
+    showStep(1); // SUMMARY
+  }, 3000);
+
+  updateSummaryNav();
+}
+
+/* ◀ SUMMARY 이전 */
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    summaryImage.src = summaryImages[currentIndex];
+    updateSummaryNav();
+  }
+});
+
+/* ▶ SUMMARY 다음 */
+nextBtn.addEventListener('click', () => {
+  if (currentIndex < summaryImages.length - 1) {
+    currentIndex++;
+    summaryImage.src = summaryImages[currentIndex];
+    updateSummaryNav();
+  } else {
+    showStep(2); // IMPLEMENTATION
+    resetIframe();
+  }
+});
+
+/* ◀ IMPLEMENTATION → SUMMARY 복귀 */
+implBackBtn.addEventListener('click', () => {
+  showStep(1); // SUMMARY
+  currentIndex = summaryImages.length - 1;
+  summaryImage.src = summaryImages[currentIndex];
+  updateSummaryNav();
+});
+
+/* PROJECT 메뉴 클릭 */
+document.querySelectorAll('a[href="#project"]').forEach(link => {
+  link.addEventListener('click', () => {
+    startProject();
   });
 });
