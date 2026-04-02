@@ -461,6 +461,261 @@ li{list-style: none;}
 
 
 
+/* =====================
+   PROJECT – SINGLE FLOW
+===================== */
+
+.project-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* 공통 step */
+.project-stage .step {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+/* 활성화 */
+.project-stage .step.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+
+/* COVER / SUMMARY 이미지 - 세로 100% 기준 */
+.project-cover img,
+.project-summary img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* IMPLEMENTATION */
+.project-implementation {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
+  align-items: center;
+
+  padding: 0 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* iPhone frame */
+.device-frame {
+  width: 360px;
+  height: 740px;
+  background: #000;
+  border-radius: 36px;
+  padding: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.device-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 26px;
+  background: #fff;
+}
+
+/* text */
+.implementation-desc h3 {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.implementation-desc p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.implementation-desc li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .project-implementation {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .device-frame {
+    margin: 0 auto;
+    transform: scale(0.9);
+  }
+
+
+  
+}
+
+
+/* =====================
+   PROJECT SUMMARY NAV (FIX)
+===================== */
+
+.project-summary {
+  position: relative;
+}
+
+/* SUMMARY 이미지 */
+.project-summary img {
+  position: relative;
+  z-index: 1; /* 🔥 버튼보다 아래 */
+}
+
+
+/* 화살표 버튼 - home.css h-nav-btn 스타일 적용 */
+.summary-nav {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 80px;
+  
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  
+  z-index: 50;
+  
+  transition: color 0.2s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.summary-nav:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* 좌우 위치 */
+.summary-nav.prev {
+  left: 40px;
+}
+
+.summary-nav.next {
+  right: 40px;
+}
+
+/* IMPLEMENTATION 화살표 */
+.project-implementation {
+  position: relative;
+}
+
+.project-implementation .impl-nav-back {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: -120px;
+  transform: translateY(-50%);
+  
+  width: 40px;
+  height: 80px;
+  
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  
+  z-index: 50;
+  
+  transition: color 0.2s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-implementation .impl-nav-back:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+/* =====================
+   iframe – scrollbar hidden
+===================== */
+
+/* 모바일 & 공통 */
+.device-frame iframe {
+  -ms-overflow-style: none;  /* IE */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.device-frame iframe::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+/* =====================
+   Desktop – horizontal hint
+===================== */
+
+@media (min-width: 1024px) {
+
+  .device-frame {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 오른쪽 페이드 힌트 */
+  .device-frame::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0),
+      rgba(0,0,0,0.35)
+    );
+  }
+}
+
+.scroll-hint {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.04em;
+}
+
+
+
 
 
 /* =====================
@@ -507,6 +762,37 @@ li{list-style: none;}
   color: #fff;
 }
 
+
+
+.modal-image-wrap {
+  position: relative;
+}
+
+.modal-image-wrap a {
+  display: block;
+  position: relative;
+}
+
+/* figma-overlay → 독립 버튼처럼 보이게 */
+.figma-overlay {
+  position: static;        /* 오버레이 해제 */
+  display: inline-block;
+  background: #2d5a45;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.figma-overlay:hover {
+  background: #1e3d2f;
+}
+
+
+
+
 /* 포트폴리오 */
 .portfolio-grid {
   display: none;
@@ -537,7 +823,15 @@ li{list-style: none;}
   width: 100%;
   height: 100%;
   object-fit: cover;           /* 이미지 꽉 차게 */
+  display: block;
   transition: transform 0.3s ease;
+}
+
+/* UI/UX 카테고리만 contain으로 - 이미지 안 잘림 */
+.portfolio-grid[data-category="uiux"] .portfolio-item img {
+  object-fit: contain;
+  padding: 16px;       /* 로고 주변 여백 */
+  background: #fff;    /* 여백 배경 흰색 */
 }
 
 
@@ -979,7 +1273,33 @@ li{list-style: none;}
     margin: 0 auto;
   }
 
+ 
   
+
+
+   /* =====================
+   PROJECT
+ /* ===================== */
+.project-image {
+    max-height: 240px;
+  }
+
+  .project-image img {
+    max-height: 240px;
+  }
+
+  .summary-nav.prev {
+    left: -10px !important;  /* ⭐ !important 추가 */
+  }
+  
+  .summary-nav.next {
+    right: 25px !important;
+  }
+  
+  .project-implementation .impl-nav-back {
+    left: 12px !important;
+  }
+
 
  /* =====================
  * WORK */
@@ -1119,6 +1439,7 @@ li{list-style: none;}
     margin-top: 24px;
   }
 
+  
   
 }
 
