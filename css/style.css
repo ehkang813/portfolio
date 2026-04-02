@@ -766,6 +766,7 @@ li{list-style: none;}
 
 .modal-image-wrap {
   position: relative;
+  margin-top: 32px;  /* ← 이 줄 추가, 숫자는 원하는 만큼 조절 */
 }
 
 .modal-image-wrap a {
