@@ -17,6 +17,7 @@
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#services">MY SERVICES</a>
+    <a href="#project">PROJECT</a>
     <a href="#work">WORK</a>
     <a href="#contact">CONTACT</a>
   </nav>
@@ -29,6 +30,7 @@
   <li data-target="home" class="active"></li>
   <li data-target="about"></li>
   <li data-target="services"></li>
+  <li data-target="project"></li>
   <li data-target="work"></li>
   <li data-target="contact"></li>
 </ul>
@@ -223,6 +225,79 @@
 
 
 
+<!-- =====================
+     PROJECT
+===================== -->
+<section id="project" class="section project-section">
+
+  <div class="project-stage">
+
+    <!-- COVER -->
+    <div class="project-cover step active">
+      <img src="./images/project-cover.jpg" alt="Project Cover">
+    </div>
+
+    <!-- SUMMARY -->
+<div class="project-summary step">
+
+  <button class="summary-nav prev" aria-label="Previous slide">
+    〈 
+  </button>
+
+  <img
+    id="summary-image"
+    src="./images/nes_01.jpg"
+    alt="Project Summary Slide"
+  >
+
+  <button class="summary-nav next" aria-label="Next slide">
+    〉
+  </button>
+
+</div>
+
+
+    <!-- IMPLEMENTATION -->
+    <div class="project-implementation step">
+
+      <button class="impl-nav-back" aria-label="Back to summary">
+    〈 
+  </button>
+
+      <div class="device-frame">
+        <iframe
+          src="./0105/index.html"
+          title="Nespresso Renewal App"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="implementation-desc">
+        <h3>Web · App Implementation</h3>
+        <p>
+          네스프레소 모바일 앱 리뉴얼을 가정하여<br>
+          실제 HTML / CSS / JavaScript로 구현한<br>
+          동작 가능한 인터랙션 결과물입니다.
+        </p>
+        <ul>
+          <li>• Splash → Walkthrough 화면 자동 전환 흐름 설계</li>
+          <li>• 아이디찾기/비밀번호찾기/회원가입/레시피 등록 등 사용자 입력 흐름을 고려한 폼 UI 설계</li>
+          <li>• 모바일 앱 UI 기준의 레이아웃 및 화면 구조 구성</li>
+          <li>• 실제 클릭 / 전환 / 상태 변화가 반영된 인터랙션 구현</li>
+        </ul>
+      </div>
+      <span class="scroll-hint">
+  ← Swipe to explore →
+</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 
 
 
@@ -338,6 +413,18 @@
       <img id="modal-image" src="" alt="">
       <p class="modal-desc"></p>
 
+<div class="modal-image-wrap">
+  <a id="modal-link" target="_blank">
+    
+    
+    <!-- 오버레이 -->
+    <div class="figma-overlay">
+      View →
+    </div>
+  </a>
+</div>
+
+
     </div>
 
   </div>
@@ -348,26 +435,172 @@
 
     <!-- UI/UX -->
     <div class="portfolio-grid" data-category="uiux">
-      <div class="portfolio-item" data-title="UIUX 1">UIUX 1</div>
-      <div class="portfolio-item" data-title="UIUX 2">UIUX 2</div>
-      <div class="portfolio-item" data-title="UIUX 3">UIUX 3</div>
-      <div class="portfolio-item" data-title="UIUX 4">UIUX 4</div>
-      <div class="portfolio-item" data-title="UIUX 5">UIUX 5</div>
-      <div class="portfolio-item" data-title="UIUX 6">UIUX 6</div>
-      <div class="portfolio-item" data-title="UIUX 7">UIUX 7</div>
-      <div class="portfolio-item" data-title="UIUX 8">UIUX 8</div>
+
+     <div class="portfolio-item" 
+      data-title="네스프레소 UI/UX"
+     data-image="./images/project-cover.jpg"
+     data-desc="네스프레소 UI/UX 개선을 통해 브랜드 경험을 강화하는 방향으로 서비스 구조를 재기획하고, Figma를 활용해 일관된 사용자 경험을 설계 및 구현하였습니다."
+     data-link="https://www.figma.com/proto/mCMdTu0R0t67MuzMN60oeu/%EA%B0%95%EC%9D%80%ED%98%9C_4%EC%B0%A8-%ED%8F%89%EA%B0%80-UIUX-%EB%94%94%EC%9E%90%EC%9D%B8_%EC%B5%9C%EC%A2%85?node-id=5-56&viewport=128%2C120%2C0.25&t=UGsC3L63kt6bqLjc-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A7&page-id=0%3A1">
+
+  <img src="./images/uiux3_logo.png" alt="네스프레소 UI/UX">
+  <span class="portfolio-label">네스프레소 UI/UX</span>
+
+  </div>
+
+
+
+
+      <div class="portfolio-item" 
+      data-title="바람길 UI/UX"
+     data-image="./images/uiux2_splish.png"
+     data-desc="AI 기반 분석을 통해 제주도 자전거길의 다양한 이용 시나리오를 기획하고, Figma를 활용해 사용자 경험 중심의 UI/UX를 설계 및 구현하였습니다."
+     data-link="https://www.figma.com/proto/Xo6hfrKLlrSgnfNqpK1xVp/%EC%9E%90%EC%A0%84%EA%B1%B0%EA%B8%B8?node-id=1-21&viewport=285%2C424%2C0.5&t=PkMyM8VzXh9ztYBL-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A21&page-id=0%3A1">
+
+  <img src="./images/uiux2_logo.png" alt="바람길 UI/UX">
+  <span class="portfolio-label">바람길 UI/UX</span>
+
+  </div>
+
+
+
+ 
+    <div class="portfolio-item"
+     data-title="Mega Coffee Mobile UI/UX"
+     data-image="./images/file cover.png"
+     data-desc="메가커피 모바일 앱 UX를 분석하고, Figma를 활용해 UI/UX를 재구성 및 구현하였습니다."
+     data-link="https://www.figma.com/proto/1Eh7We2vQ75374ZRVBp93T/coffee?page-id=0%3A1&node-id=2-172&m=draw&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A172&t=1Nc3xOWtdWV0JCjt-1">
+
+  <img src="./images/bi_logo1.png" alt="Mega Coffee UI/UX">
+  <span class="portfolio-label">Mega Coffee UI/UX</span>
+
+  </div>
+
+
+
+  <div class="portfolio-item" 
+      data-title="로몬 UI/UX"
+     data-image="./images/uiux4_cover.png"
+     data-desc="AI를 기반으로 캠핑 브랜드를 기획하고, Figma를 활용해 UI/UX 및 프로토타입을 구현하였습니다."
+     data-link="https://www.figma.com/proto/ZBePfH5YBU35QyA1rRVSwR/%EC%B0%A8%EB%B0%95?node-id=2-3&viewport=345%2C307%2C0.5&t=Fd1BF2A3asizbNAW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A3&page-id=1%3A2">
+
+  <img src="./images/uiux4_logo.png" alt="로몬 UI/UX">
+  <span class="portfolio-label">로몬 UI/UX</span>
+
+  </div>
+
+
+  <div class="portfolio-item" 
+      data-title="서브웨이 UI/UX"
+     data-image="./images/uiux5_cover.png"
+     data-desc="서브웨이의 브랜드 정체성을 직관적으로 전달하기 위해 핵심 가치인 *신선함(Freshness)*과 *간편함(Convenience)*을 반영한 온보딩을 설계하고, 이후 화면으로 자연스럽게 이어지는 사용자 흐름을 기획하였습니다."
+     data-link="https://www.figma.com/proto/erXBWPU9IpWcpb5tRqSqEY/%EC%84%9C%EB%B8%8C%EC%9B%A8%EC%9D%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-?node-id=1-7&viewport=272%2C244%2C0.35&t=jNm4OsgWqiSM0Ge6-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A7&page-id=1%3A2">
+
+  <img src="./images/uiux5_logo.png" alt="서브웨이 UI/UX">
+  <span class="portfolio-label">서브웨이 UI/UX</span>
+
+  </div>
+
+   
     </div>
 
     <!-- CODING -->
     <div class="portfolio-grid" data-category="coding">
-      <div class="portfolio-item" data-title="Coding 1">CODING 1</div>
-      <div class="portfolio-item" data-title="Coding 2">CODING 2</div>
-      <div class="portfolio-item" data-title="Coding 3">CODING 3</div>
-      <div class="portfolio-item" data-title="Coding 4">CODING 4</div>
-      <div class="portfolio-item" data-title="Coding 5">CODING 5</div>
-      <div class="portfolio-item" data-title="Coding 6">CODING 6</div>
-      <div class="portfolio-item" data-title="Coding 7">CODING 7</div>
-      <div class="portfolio-item" data-title="Coding 8">CODING 8</div>
+
+    <div class="portfolio-item" 
+      data-title="네스프레소 모바일 웹"
+      data-image="./images/uiux3_cover.png"
+       data-desc="네스프레소 UI/UX 개선을 통해 브랜드 경험을 강화하는 방향으로 서비스 구조를 재기획하고, Figma를 활용해 일관된 사용자 경험을 설계·구현한 뒤, 이를 고도화하여 모바일 웹(HTML)으로 확장 구현하였습니다."
+       data-link="https://ehkang813.github.io/html/0105/home.html">
+       <img src="./images/uiux3_logo.png" alt="네스프레소">
+       <span class="portfolio-label">네스프레소 모바일 웹</span>
+    </div>
+
+
+
+<div class="portfolio-item" 
+      data-title="바람길 모바일 웹"
+     data-image="./images/uiux2_splish.png"
+     data-desc="AI 기반 분석을 통해 제주도 자전거길의 다양한 이용 시나리오를 기획하고, Figma를 활용해 사용자 경험 중심의 UI/UX를 설계·구현한 뒤, 이를 고도화하여 모바일 웹(HTML)으로 확장 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/ncs_ui2/index.html">
+
+  <img src="./images/uiux2_logo.png" alt="바람길">
+  <span class="portfolio-label">바람길 모바일 웹</span>
+
+  </div>
+
+
+
+
+  <div class="portfolio-item" 
+      data-title="로몬 모바일 웹"
+     data-image="./images/uiux4_cover.png"
+     data-desc="AI를 기반으로 캠핑 브랜드를 기획하고, Figma를 활용해 UI/UX 및 프로토타입을 구현한 뒤, 이를 모바일 웹(HTML)으로 확장 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/ncs_ui1/main.html">
+
+  <img src="./images/uiux4_logo.png" alt="로몬">
+  <span class="portfolio-label">로몬  모바일 웹</span>
+
+  </div>
+
+      
+   <div class="portfolio-item" 
+      data-title="모나미 2단 메뉴"
+     data-image="./images/html4_cover.png"
+     data-desc="모나미 사이트의 2Depth 내비게이션 구조를 분석하고, HTML을 활용해 인터랙션이 반영된 메뉴를 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/monami/index.html">
+
+  <img src="./images/html4_logo.png" alt="모나미">
+  <span class="portfolio-label">모나미 2단 메뉴</span>
+
+  </div>
+
+
+
+
+  <div class="portfolio-item" 
+      data-title="한국화장품 2단 메뉴"
+     data-image="./images/html6_cover.png"
+     data-desc="한국화장품 사이트의 2Depth 내비게이션 구조를 분석하고, HTML을 활용해 인터랙션이 반영된 메뉴를 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/korea/index.html">
+
+  <img src="./images/html6_logo.png" alt="한국화장품">
+  <span class="portfolio-label">한국화장품 2단 메뉴</span>
+
+  </div>
+
+
+
+
+    <div class="portfolio-item" 
+      data-title="코텍 2단 메뉴"
+     data-image="./images/html7_cover.png"
+     data-desc="코텍 사이트의 2Depth 내비게이션 구조를 분석하고, HTML을 활용해 인터랙션이 반영된 메뉴를 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/kotec/index.html">
+
+  <img src="./images/html7_logo.png" alt="코텍">
+  <span class="portfolio-label">코텍 2단 메뉴</span>
+
+  </div>
+
+
+
+
+
+  <div class="portfolio-item" 
+      data-title="상품주문서"
+     data-image="./images/html5_cover.png"
+     data-desc="상품주문서를 HTML과 CSS를 활용해 구현하였습니다."
+     data-link="https://ehkang813.github.io/html/index2.html">
+
+  <img src="./images/html5_logo.png" alt="상품주문서">
+  <span class="portfolio-label">상품주문서</span>
+
+  </div>
+
+
+
+
+    
     </div>
 
   </div>
@@ -409,9 +642,9 @@
 </div>
 
 
-      <a href="./resume.pdf" class="btn-download">
+      <!-- <a href="./resume.pdf" class="btn-download">
         이력서 다운로드
-      </a>
+      </a> -->
       <!-- <p>
         Thank you for visiting my portfolio!
       </p> -->
@@ -435,6 +668,8 @@
 <footer class="site-footer">
   <p>© KANG EUNHYE. All Rights Reserved.</p>
 </footer>
+
+
 
 
 
